@@ -1,16 +1,16 @@
 Name:       python3-requests
 Summary:    Requests is an elegant and simple HTTP library for Python
-Version:    2.23.0
+Version:    2.34.2
 Release:    1
 License:    ASL 2.0
 URL:        https://github.com/sailfishos/python3-requests
 BuildArch:  noarch
 Source0:    %{name}-%{version}.tar.bz2
-Requires:   python3-base
-Requires:   python3-certifi >= 2017.4.17
+Requires:   python3-base >= 3.10
+Requires:   python3-certifi >= 2023.5.7
 Requires:   python3-chardet >= 3.0.2
 Requires:   python3-idna >= 2.5
-Requires:   python3-urllib3 >= 1.25.2
+Requires:   python3-urllib3 >= 1.26
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-chardet
@@ -28,10 +28,8 @@ Requests allows you to send HTTP/1.1 requests extremely easily. There’s no nee
 %{py3_build}
 
 %install
-rm -rf %{buildroot}
 %{py3_install}
 
 %files
-%defattr(-,root,root,-)
 %{python3_sitelib}/requests
 %{python3_sitelib}/requests-*.egg-info
